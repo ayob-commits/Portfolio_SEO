@@ -1,6 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* -------------------------------------------------------------
+       PRELOADER / INTRO SCREEN
+    ------------------------------------------------------------- */
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        window.addEventListener('load', () => {
+            // Laisser l'animation d'intro jouer pendant au moins 2.5s
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+            }, 2500);
+        });
+        
+        // Sécurité si l'événement load tarde trop à se déclencher
+        setTimeout(() => {
+            if (!preloader.classList.contains('fade-out')) {
+                preloader.classList.add('fade-out');
+            }
+        }, 4000);
+    }
+
+    /* -------------------------------------------------------------
        THEME TOGGLE (DARK/LIGHT MODE)
     ------------------------------------------------------------- */
     const themeToggleBtn = document.getElementById('theme-toggle');
@@ -93,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         let currentSectionId = '';
-        const scrollPosition = window.scrollY + 100;
+        const scrollPosition = window.scrollY + 120;
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -113,13 +133,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* -------------------------------------------------------------
+       HERO CAROUSEL (IMAGE SLIDER)
+    ------------------------------------------------------------- */
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlideIndex = 0;
+    const slideInterval = 5000; // 5 seconds
+
+    if (slides.length > 0) {
+        setInterval(() => {
+            // Remove active class from current slide
+            slides[currentSlideIndex].classList.remove('active');
+            
+            // Move to next slide index
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            
+            // Add active class to new slide
+            slides[currentSlideIndex].classList.add('active');
+        }, slideInterval);
+    }
+
+    /* -------------------------------------------------------------
        PROJECTS DYNAMIC FILTER
     ------------------------------------------------------------- */
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectItems = document.querySelectorAll('.project-item');
 
     filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', (e) => {
+            e.stopPropagation(); // Avoid modal triggers
+            
             // Remove active class from all buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
             // Add active to current
@@ -137,7 +179,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Animation trigger
                     setTimeout(() => {
                         item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
+                        if (window.innerWidth > 1024) {
+                            // Re-apply asymmetrical offsets
+                            const index = Array.from(item.parentNode.children).indexOf(item);
+                            if (index === 1 || index === 3) {
+                                item.style.transform = 'translateY(40px)';
+                            } else {
+                                item.style.transform = 'translateY(0)';
+                            }
+                        } else {
+                            item.style.transform = 'translateY(0)';
+                        }
                     }, 50);
                 } else {
                     // Hide item with smooth fade out
@@ -152,7 +204,67 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* -------------------------------------------------------------
-       CONTACT FORM SUBMISSION (MOCK ACTION)
+       INTERACTIVE PROJECT MODAL (POPUP)
+    ------------------------------------------------------------- */
+    const projectModal = document.getElementById('project-modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalTag = document.getElementById('modal-tag');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc = document.getElementById('modal-desc');
+    const modalClient = document.getElementById('modal-client');
+    const modalYear = document.getElementById('modal-year');
+    const modalTools = document.getElementById('modal-tools');
+    const modalCloseBtn = document.querySelector('.modal-close-btn');
+    const modalOverlay = document.querySelector('.modal-overlay');
+
+    // Open Modal
+    projectItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Get project data from attributes
+            const title = item.getAttribute('data-title');
+            const category = item.getAttribute('data-category');
+            const client = item.getAttribute('data-client');
+            const year = item.getAttribute('data-year');
+            const tools = item.getAttribute('data-tools');
+            const desc = item.getAttribute('data-desc');
+            const img = item.getAttribute('data-img');
+
+            // Inject into modal elements
+            modalTitle.textContent = title;
+            modalTag.textContent = category;
+            modalClient.textContent = client;
+            modalYear.textContent = year;
+            modalTools.textContent = tools;
+            modalDesc.textContent = desc;
+            modalImg.src = img;
+            modalImg.alt = title;
+
+            // Show modal
+            projectModal.classList.add('open');
+            projectModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden'; // Lock background scroll
+        });
+    });
+
+    // Close Modal Function
+    const closeModal = () => {
+        projectModal.classList.remove('open');
+        projectModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = ''; // Unlock scroll
+    };
+
+    modalCloseBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', closeModal);
+
+    // Close on Escape Key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && projectModal.classList.contains('open')) {
+            closeModal();
+        }
+    });
+
+    /* -------------------------------------------------------------
+       CONTACT FORM SUBMISSION
     ------------------------------------------------------------- */
     const contactForm = document.getElementById('contact-form');
     const formFeedback = document.getElementById('form-feedback');

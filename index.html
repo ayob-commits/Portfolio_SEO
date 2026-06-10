@@ -8,13 +8,34 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Preloader / Intro Screen -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="preloader-logo">
+                <line x1="10" y1="10" x2="90" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                <line x1="10" y1="90" x2="90" y2="90" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                <line x1="10" y1="10" x2="10" y2="90" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                <line x1="90" y1="10" x2="90" y2="90" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                <rect x="18" y="18" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="18" y1="18" x2="82" y2="82" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2,2" opacity="0.5"/>
+                <line x1="18" y1="82" x2="82" y2="18" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2,2" opacity="0.5"/>
+                <path d="M 42,35 C 42,30 32,30 32,35 C 32,40 42,42 42,47 C 42,52 32,52 32,47" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M 54,34 L 46,34 L 46,54 L 54,54 M 46,44 L 52,44" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="64" cy="50" r="12" fill="none" stroke="currentColor" stroke-width="2.5"/>
+            </svg>
+            <h2 class="preloader-title">SALAH EDDINE OUSSI</h2>
+            <span class="preloader-subtitle">ARCHITECTURE</span>
+            <div class="preloader-bar"><span></span></div>
+        </div>
+    </div>
 
     <!-- Light/Dark Mode Switcher & Background Fine Grid -->
     <div class="fine-grid"></div>
@@ -23,11 +44,26 @@
     <header class="main-header">
         <div class="header-container">
             <a href="#" class="logo">
-                <span class="logo-title">SALAH EDDINE OUSSI</span>
-                <span class="logo-subtitle">ARCHITECTURE</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="logo-svg">
+                    <line x1="10" y1="10" x2="90" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                    <line x1="10" y1="90" x2="90" y2="90" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                    <line x1="10" y1="10" x2="10" y2="90" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                    <line x1="90" y1="10" x2="90" y2="90" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                    <rect x="18" y="18" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="18" y1="18" x2="82" y2="82" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2,2" opacity="0.5"/>
+                    <line x1="18" y1="82" x2="82" y2="18" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2,2" opacity="0.5"/>
+                    <path d="M 42,35 C 42,30 32,30 32,35 C 32,40 42,42 42,47 C 42,52 32,52 32,47" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M 54,34 L 46,34 L 46,54 L 54,54 M 46,44 L 52,44" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="64" cy="50" r="12" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                </svg>
+                <div class="logo-text">
+                    <span class="logo-title">SALAH EDDINE OUSSI</span>
+                    <span class="logo-subtitle">ARCHITECTURE</span>
+                </div>
             </a>
             <nav class="nav-menu">
                 <a href="#about" class="nav-link">À Propos</a>
+                <a href="#services" class="nav-link">Expertises</a>
                 <a href="#projects" class="nav-link">Projets</a>
                 <a href="#experience" class="nav-link">Expérience</a>
                 <a href="#contact" class="nav-link">Contact</a>
@@ -48,16 +84,25 @@
     <!-- Mobile Navigation Drawer -->
     <div class="mobile-nav">
         <a href="#about" class="mobile-nav-link">À Propos</a>
+        <a href="#services" class="mobile-nav-link">Expertises</a>
         <a href="#projects" class="mobile-nav-link">Projets</a>
         <a href="#experience" class="mobile-nav-link">Expérience</a>
         <a href="#contact" class="mobile-nav-link">Contact</a>
     </div>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section with Background Slider -->
         <section class="hero-section" id="home">
             <div class="hero-bg-container">
-                <img src="assets/hero-architecture.png" alt="Rendu architectural minimaliste" class="hero-bg-img">
+                <div class="hero-slide active">
+                    <img src="assets/hero-architecture.png" alt="Rendu architectural minimaliste" class="hero-bg-img">
+                </div>
+                <div class="hero-slide">
+                    <img src="assets/project-theatre.png" alt="Rendu du Grand Théâtre d'Agadir" class="hero-bg-img">
+                </div>
+                <div class="hero-slide">
+                    <img src="assets/project-heritage.png" alt="Restauration de rempart historique" class="hero-bg-img">
+                </div>
                 <div class="hero-overlay"></div>
             </div>
             <div class="hero-content">
@@ -129,6 +174,55 @@
             </div>
         </section>
 
+        <!-- Expertises & Services Section (Inspiration M.Y Archi Studio) -->
+        <section class="services-section" id="services">
+            <div class="section-container">
+                <span class="section-subtitle">SERVICES</span>
+                <h2 class="section-title">Champs d'intervention & expertises</h2>
+                <div class="services-grid">
+                    <div class="service-card scroll-reveal">
+                        <div class="service-num">01</div>
+                        <h3>Architecture de Projets</h3>
+                        <p>Conception complète de projets d'architecture résidentielle, commerciale et d'équipements publics. Analyse spatiale, dessins de plans et suivi rigoureux de chantier.</p>
+                        <ul class="service-bullets">
+                            <li><i class="fa-solid fa-chevron-right"></i> Logements collectifs & villas</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Équipements culturels & religieux</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card scroll-reveal">
+                        <div class="service-num">02</div>
+                        <h3>Restauration de Patrimoine</h3>
+                        <p>Application des règles de conservation du patrimoine bâti historique. Diagnostics de structures anciennes, maçonnerie traditionnelle et restauration de remparts médiévaux.</p>
+                        <ul class="service-bullets">
+                            <li><i class="fa-solid fa-chevron-right"></i> Analyse historique & préservation</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Techniques de restauration de pierre</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card scroll-reveal">
+                        <div class="service-num">03</div>
+                        <h3>Urbanisme & Aménagement</h3>
+                        <p>Études de mise à niveau territoriale des quartiers sous-équipés, aménagement d'espaces publics durables et intégration d'analyses SIG complexes.</p>
+                        <ul class="service-bullets">
+                            <li><i class="fa-solid fa-chevron-right"></i> Intégration SIG (ArcMap)</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Planification urbaine locale</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card scroll-reveal">
+                        <div class="service-num">04</div>
+                        <h3>Rendu 3D & Design Intérieur</h3>
+                        <p>Modélisation de précision et rendu photoréaliste d'espaces sous Lumion et Twinmotion. Post-production et conception de fiches de présentation haut de gamme.</p>
+                        <ul class="service-bullets">
+                            <li><i class="fa-solid fa-chevron-right"></i> Images de synthèse & visites 3D</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Agencement de détails spatiaux</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Skills & Software Section -->
         <section class="skills-section">
             <div class="section-container">
@@ -180,66 +274,96 @@
                 <!-- Projects Grid -->
                 <div class="projects-grid">
                     <!-- Project 1 -->
-                    <div class="project-item scroll-reveal" data-category="culture">
+                    <div class="project-item scroll-reveal" data-category="culture"
+                         data-title="Le Grand Théâtre d'Agadir"
+                         data-client="Al Omrane Souss Massa / Ministère de la Culture"
+                         data-year="2025"
+                         data-tools="Archicad, Lumion, MS Project"
+                         data-desc="Ce stage professionnel au sein de la Division des Études d'Al Omrane a permis de participer au suivi rigoureux des travaux de gros œuvre et de structure du futur Grand Théâtre d'Agadir, un équipement culturel majeur. Analyse géométrique des plans de coffrage et de ferraillage, et mise en relation de la programmation avec le chantier."
+                         data-img="assets/project-theatre.png">
                         <div class="project-img-wrapper">
                             <img src="assets/project-theatre.png" alt="Grand Théâtre d'Agadir" class="project-img">
                             <div class="project-overlay">
                                 <span class="project-category">Culturel / Grand Équipement</span>
                                 <h3 class="project-item-title">Le Grand Théâtre d'Agadir</h3>
                                 <p class="project-item-desc">Suivi de chantier et de conception pour un édifice culturel d'envergure régionale.</p>
-                                <span class="project-badge">Al Omrane Souss Massa</span>
+                                <span class="project-badge">Voir le projet <i class="fa-solid fa-arrow-right-long"></i></span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 2 -->
-                    <div class="project-item scroll-reveal" data-category="residential">
+                    <div class="project-item scroll-reveal" data-category="residential"
+                         data-title="Grande Mosquée & Agadir Bay"
+                         data-client="Sté. Zerdkide Construction"
+                         data-year="2021"
+                         data-tools="Dessin Technique, Suivi de Chantier, Excel"
+                         data-desc="Stage de chantier portant sur le suivi du gros œuvre de la Grande Mosquée de Hay Essalam et de la deuxième tranche du complexe résidentiel haut de gamme Agadir Bay. Une immersion totale sur le terrain pour appréhender la mise en œuvre du béton armé, les approvisionnements de matériaux et le respect des tolérances structurelles."
+                         data-img="assets/project-mosquee.png">
                         <div class="project-img-wrapper">
                             <img src="assets/project-mosquee.png" alt="Grande Mosquée Hay Essalam" class="project-img">
                             <div class="project-overlay">
                                 <span class="project-category">Édifice Religieux / Résidentiel</span>
                                 <h3 class="project-item-title">Grande Mosquée & Agadir Bay</h3>
                                 <p class="project-item-desc">Suivi de chantier de gros œuvre pour un lieu de culte et une tranche de complexe résidentiel haut de gamme.</p>
-                                <span class="project-badge">Zerdkide Construction</span>
+                                <span class="project-badge">Voir le projet <i class="fa-solid fa-arrow-right-long"></i></span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 3 -->
-                    <div class="project-item scroll-reveal" data-category="culture">
+                    <div class="project-item scroll-reveal" data-category="culture"
+                         data-title="Château Pontus de Tyard"
+                         data-client="Association de Préservation REMPART (France)"
+                         data-year="2023"
+                         data-tools="Outils de Maçonnerie Traditionnelle, Analyse Historique"
+                         data-desc="Stage de préservation et de restauration du patrimoine bâti médiéval en France. Apprentissage et application pratique de la taille de pierre, de la confection de mortiers de chaux traditionnels, et de la réhabilitation structurelle sécurisée de remparts médiévaux selon les chartes de conservation patrimoniale."
+                         data-img="assets/project-heritage.png">
                         <div class="project-img-wrapper">
                             <img src="assets/project-heritage.png" alt="Château Pontus de Tyard" class="project-img">
                             <div class="project-overlay">
                                 <span class="project-category">Conservation du Patrimoine</span>
                                 <h3 class="project-item-title">Château Pontus de Tyard (France)</h3>
                                 <p class="project-item-desc">Restauration historique de remparts médiévaux et conservation de structure ancienne.</p>
-                                <span class="project-badge">Association Rempart</span>
+                                <span class="project-badge">Voir le projet <i class="fa-solid fa-arrow-right-long"></i></span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 4 -->
-                    <div class="project-item scroll-reveal" data-category="residential">
+                    <div class="project-item scroll-reveal" data-category="residential"
+                         data-title="Centres de Santé & Banque"
+                         data-client="Agence Irizi Architecture"
+                         data-year="2024"
+                         data-tools="Archicad, Photoshop, SketchUp"
+                         data-desc="Immersion au sein d'une agence d'architecture privée à Agadir. Conception et modélisation de plans de réaménagement intérieurs et façades pour des centres de santé locaux (équipements publics médicaux) et travail de conception de volumes d'une agence et résidence bancaire."
+                         data-img="assets/project-sante.png">
                         <div class="project-img-wrapper">
                             <img src="assets/project-sante.png" alt="Centres de Santé et Résidence Bancaire" class="project-img">
                             <div class="project-overlay">
                                 <span class="project-category">Équipement Public / Tertiaire</span>
                                 <h3 class="project-item-title">Centres de Santé & Banque</h3>
                                 <p class="project-item-desc">Participation au réaménagement de structures médicales et conception d'une résidence bancaire.</p>
-                                <span class="project-badge">Agence Irizi Architecture</span>
+                                <span class="project-badge">Voir le projet <i class="fa-solid fa-arrow-right-long"></i></span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 5 -->
-                    <div class="project-item scroll-reveal" data-category="urban">
+                    <div class="project-item scroll-reveal" data-category="urban"
+                         data-title="Mise à niveau des Quartiers d'Agadir"
+                         data-client="Commune Urbaine d'Agadir"
+                         data-year="2024"
+                         data-tools="ArcMap, Photoshop, Rapports de Planification"
+                         data-desc="Stage en administration publique au sein de la Division de l'Urbanisme. Étude d'intégration sociale et territoriale pour des projets de réhabilitation de quartiers sous-équipés à la périphérie d'Agadir. Cartographie et analyses spatiales sur ArcMap pour la restructuration viaire et l'intégration de réseaux divers."
+                         data-img="assets/project-urbanisme.png">
                         <div class="project-img-wrapper">
                             <img src="assets/project-urbanisme.png" alt="Mise à niveau urbaine d'Agadir" class="project-img">
                             <div class="project-overlay">
                                 <span class="project-category">Planification Urbaine</span>
                                 <h3 class="project-item-title">Mise à niveau des Quartiers</h3>
                                 <p class="project-item-desc">Division d'Urbanisme : Étude et participation au développement de quartiers sous-équipés.</p>
-                                <span class="project-badge">Commune Urbaine d'Agadir</span>
+                                <span class="project-badge">Voir le projet <i class="fa-solid fa-arrow-right-long"></i></span>
                             </div>
                         </div>
                     </div>
@@ -386,13 +510,64 @@
     <!-- Footer -->
     <footer class="main-footer">
         <div class="footer-container">
-            <p>&copy; 2026 Salah Eddine Oussi. Tous droits réservés.</p>
-            <p class="footer-credits">Conçu avec précision &bull; Architecture ENA Agadir</p>
+            <a href="#" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="logo-svg">
+                    <line x1="10" y1="10" x2="90" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                    <line x1="10" y1="90" x2="90" y2="90" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                    <line x1="10" y1="10" x2="10" y2="90" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                    <line x1="90" y1="10" x2="90" y2="90" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                    <rect x="18" y="18" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="18" y1="18" x2="82" y2="82" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2,2" opacity="0.5"/>
+                    <line x1="18" y1="82" x2="82" y2="18" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2,2" opacity="0.5"/>
+                    <path d="M 42,35 C 42,30 32,30 32,35 C 32,40 42,42 42,47 C 42,52 32,52 32,47" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M 54,34 L 46,34 L 46,54 L 54,54 M 46,44 L 52,44" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="64" cy="50" r="12" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                </svg>
+                <div class="logo-text">
+                    <span class="logo-title">SALAH EDDINE OUSSI</span>
+                    <span class="logo-subtitle">ARCHITECTURE</span>
+                </div>
+            </a>
+            <p class="footer-credits">Conçu avec précision &bull; Architecture ENA Agadir &bull; Inspiration M.Y Archi Studio</p>
             <a href="#" class="back-to-top" aria-label="Retour en haut">
                 <i class="fa-solid fa-arrow-up"></i>
             </a>
         </div>
     </footer>
+
+    <!-- Project Modal Popup -->
+    <div id="project-modal" class="project-modal" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-wrapper">
+            <button class="modal-close-btn" aria-label="Fermer la fenêtre"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-grid">
+                <div class="modal-visual-side">
+                    <img id="modal-img" src="" alt="Rendu de projet">
+                </div>
+                <div class="modal-info-side">
+                    <span id="modal-tag" class="modal-tag">CATÉGORIE</span>
+                    <h3 id="modal-title" class="modal-title">Titre du Projet</h3>
+                    <p id="modal-desc" class="modal-desc">Description détaillée...</p>
+                    
+                    <div class="modal-technical-sheet">
+                        <h4>Fiche Technique</h4>
+                        <div class="tech-row">
+                            <span class="tech-label">Client / Organisme :</span>
+                            <span id="modal-client" class="tech-value">-</span>
+                        </div>
+                        <div class="tech-row">
+                            <span class="tech-label">Année :</span>
+                            <span id="modal-year" class="tech-value">-</span>
+                        </div>
+                        <div class="tech-row">
+                            <span class="tech-label">Logiciels clés :</span>
+                            <span id="modal-tools" class="tech-value">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Custom Script -->
     <script src="app.js"></script>
