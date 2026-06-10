@@ -168,29 +168,59 @@ document.addEventListener('DOMContentLoaded', () => {
         btnIcon.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
         submitBtn.disabled = true;
 
-        // Simulate network latency (1.5 seconds)
-        setTimeout(() => {
-            // Get form values
-            const nameVal = document.getElementById('name').value.trim();
-            
-            // Show Success Message
-            formFeedback.textContent = `Merci ${nameVal}, votre message a bien été envoyé ! Je vous répondrai dans les plus brefs délais.`;
-            formFeedback.className = 'form-feedback success';
+        // Get form values
+        const nameVal = document.getElementById('name').value.trim();
+        const emailVal = document.getElementById('email').value.trim();
+        const subjectVal = document.getElementById('subject').value.trim();
+        const messageVal = document.getElementById('message').value.trim();
 
-            // Reset Form
-            contactForm.reset();
-            
+        // Submit form data using FormSubmit AJAX API
+        fetch("https://formsubmit.co/ajax/ayobab72@gmail.com", {
+            method: "POST",
+            headers: { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                name: nameVal,
+                email: emailVal,
+                subject: subjectVal,
+                message: messageVal
+            })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("HTTP error " + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success === "true" || data.success === true) {
+                // Show Success Message
+                formFeedback.textContent = `Merci ${nameVal}, votre message a bien été envoyé ! Je vous répondrai dans les plus brefs délais.`;
+                formFeedback.className = 'form-feedback success';
+                contactForm.reset();
+            } else {
+                formFeedback.textContent = "Une erreur est survenue lors de l'envoi. Veuillez réessayer.";
+                formFeedback.className = 'form-feedback error';
+            }
+        })
+        .catch(error => {
+            console.error("FormSubmit Error:", error);
+            formFeedback.textContent = "Une erreur réseau est survenue. Veuillez vérifier votre connexion.";
+            formFeedback.className = 'form-feedback error';
+        })
+        .finally(() => {
             // Restore button
             btnText.textContent = 'Envoyer le message';
             btnIcon.innerHTML = '<i class="fa-solid fa-arrow-right-long"></i>';
             submitBtn.disabled = false;
 
-            // Clear feedback after 6 seconds
+            // Clear feedback after 8 seconds
             setTimeout(() => {
                 formFeedback.textContent = '';
                 formFeedback.className = 'form-feedback';
-            }, 6000);
-
-        }, 1500);
+            }, 8000);
+        });
     });
 });
