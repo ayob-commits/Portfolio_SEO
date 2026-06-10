@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salah Eddine Oussi | Architecte & Designer d'Espace</title>
+    <meta name="description" content="Portfolio d'architecture de Salah Eddine Oussi, étudiant et stagiaire à l'École Nationale d'Architecture d'Agadir. Découvrez mes projets, mon parcours et mes compétences en conception d'espace.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Light/Dark Mode Switcher & Background Fine Grid -->
+    <div class="fine-grid"></div>
+
+    <!-- Header / Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span class="logo-title">SALAH EDDINE OUSSI</span>
+                <span class="logo-subtitle">ARCHITECTURE</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#about" class="nav-link">À Propos</a>
+                <a href="#projects" class="nav-link">Projets</a>
+                <a href="#experience" class="nav-link">Expérience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-btn" aria-label="Changer de thème">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="#contact" class="cta-btn-minimal">Me Contacter</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav">
+        <a href="#about" class="mobile-nav-link">À Propos</a>
+        <a href="#projects" class="mobile-nav-link">Projets</a>
+        <a href="#experience" class="mobile-nav-link">Expérience</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+            <div class="hero-bg-container">
+                <img src="assets/hero-architecture.png" alt="Rendu architectural minimaliste" class="hero-bg-img">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-title-wrapper">
+                    <span class="hero-tagline animate-up">CONCEVOIR L'ESPACE</span>
+                    <h1 class="hero-title animate-up">SCULPTER LA LUMIÈRE.</h1>
+                    <p class="hero-desc animate-up">Futur architecte diplômé de l'École Nationale d'Architecture d'Agadir. Allier rationalité technique, respect du patrimoine et esthétique contemporaine.</p>
+                </div>
+                <div class="hero-actions-container animate-up">
+                    <a href="#projects" class="btn-primary">Découvrir mes projets</a>
+                    <a href="#about" class="btn-secondary">Explorer mon profil</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span class="scroll-line"></span>
+            </div>
+        </section>
+
+        <!-- About & Profile Section -->
+        <section class="about-section" id="about">
+            <div class="section-container">
+                <div class="about-grid">
+                    <div class="about-visual scroll-reveal">
+                        <div class="avatar-placeholder">
+                            <div class="avatar-initials">S.O</div>
+                            <div class="avatar-border"></div>
+                        </div>
+                        <div class="quick-info">
+                            <h3>Salah Eddine OUSSI</h3>
+                            <p class="info-role">Étudiant Architecte (ENA Agadir)</p>
+                            <p class="info-location"><i class="fa-solid fa-location-dot"></i> Quartier Tilila, Agadir, Maroc</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-text scroll-reveal">
+                        <span class="section-subtitle">MANIFESTE</span>
+                        <h2 class="section-title">L'architecture comme équilibre entre forme, matière et héritage.</h2>
+                        <p class="about-p">
+                            Riche de multiples expériences de stages en agence, en administration publique et sur chantier, je développe une sensibilité particulière pour l'architecture durable et la mise en valeur des identités locales. 
+                        </p>
+                        <p class="about-p">
+                            Mon parcours à l'<strong>École Nationale d'Architecture d'Agadir</strong> m'a appris à appréhender le projet architectural dans sa globalité, depuis l'analyse territoriale et spatiale jusqu'au suivi de chantier et à la restauration du patrimoine historique.
+                        </p>
+
+                        <!-- Details Grid: Languages, Interests -->
+                        <div class="details-grid">
+                            <div class="details-col">
+                                <h4><i class="fa-solid fa-language"></i> Langues</h4>
+                                <ul class="details-list">
+                                    <li><strong>Arabe</strong> : Langue maternelle</li>
+                                    <li><strong>Français</strong> : Niveau C1 (Courant)</li>
+                                    <li><strong>Anglais</strong> : Niveau B2 (Technique)</li>
+                                    <li><strong>Espagnol</strong> : Niveau A1 (Notions)</li>
+                                </ul>
+                            </div>
+                            <div class="details-col">
+                                <h4><i class="fa-solid fa-heart"></i> Centres d'Intérêt</h4>
+                                <div class="interests-tags">
+                                    <span class="interest-tag"><i class="fa-solid fa-camera"></i> Photographie</span>
+                                    <span class="interest-tag"><i class="fa-solid fa-plane"></i> Voyages</span>
+                                    <span class="interest-tag"><i class="fa-solid fa-futbol"></i> Football</span>
+                                    <span class="interest-tag"><i class="fa-solid fa-running"></i> Taekwondo</span>
+                                    <span class="interest-tag"><i class="fa-solid fa-person-swimming"></i> Natation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Software Section -->
+        <section class="skills-section">
+            <div class="section-container">
+                <span class="section-subtitle">COMPÉTENCES</span>
+                <h2 class="section-title">Outils & Maîtrise Technique</h2>
+                <div class="skills-grid">
+                    <div class="skill-card scroll-reveal">
+                        <div class="skill-icon"><i class="fa-solid fa-drafting-compass"></i></div>
+                        <h3>CAD & Modélisation 3D</h3>
+                        <p>Archicad, SketchUp</p>
+                        <div class="skill-level-bar"><span style="width: 85%;"></span></div>
+                    </div>
+                    <div class="skill-card scroll-reveal">
+                        <div class="skill-icon"><i class="fa-solid fa-cube"></i></div>
+                        <h3>Rendu 3D & Animation</h3>
+                        <p>Lumion, Twinmotion</p>
+                        <div class="skill-level-bar"><span style="width: 90%;"></span></div>
+                    </div>
+                    <div class="skill-card scroll-reveal">
+                        <div class="skill-icon"><i class="fa-solid fa-paint-brush"></i></div>
+                        <h3>Post-Production & Design</h3>
+                        <p>Photoshop, Illustrator, InDesign</p>
+                        <div class="skill-level-bar"><span style="width: 80%;"></span></div>
+                    </div>
+                    <div class="skill-card scroll-reveal">
+                        <div class="skill-icon"><i class="fa-solid fa-map-marked-alt"></i></div>
+                        <h3>SIG & Analyse Spatiale</h3>
+                        <p>ArcMap (Système d'Information Géographique)</p>
+                        <div class="skill-level-bar"><span style="width: 75%;"></span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Gallery Section -->
+        <section class="projects-section" id="projects">
+            <div class="section-container">
+                <span class="section-subtitle">PORTFOLIO</span>
+                <h2 class="section-title">Travaux & Projets Clés</h2>
+                
+                <!-- Filters -->
+                <div class="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all">Tous</button>
+                    <button class="filter-btn" data-filter="culture">Culture & Patrimoine</button>
+                    <button class="filter-btn" data-filter="residential">Résidentiel & Commercial</button>
+                    <button class="filter-btn" data-filter="urban">Urbanisme</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-item scroll-reveal" data-category="culture">
+                        <div class="project-img-wrapper">
+                            <img src="assets/project-theatre.png" alt="Grand Théâtre d'Agadir" class="project-img">
+                            <div class="project-overlay">
+                                <span class="project-category">Culturel / Grand Équipement</span>
+                                <h3 class="project-item-title">Le Grand Théâtre d'Agadir</h3>
+                                <p class="project-item-desc">Suivi de chantier et de conception pour un édifice culturel d'envergure régionale.</p>
+                                <span class="project-badge">Al Omrane Souss Massa</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-item scroll-reveal" data-category="residential">
+                        <div class="project-img-wrapper">
+                            <img src="assets/project-mosquee.png" alt="Grande Mosquée Hay Essalam" class="project-img">
+                            <div class="project-overlay">
+                                <span class="project-category">Édifice Religieux / Résidentiel</span>
+                                <h3 class="project-item-title">Grande Mosquée & Agadir Bay</h3>
+                                <p class="project-item-desc">Suivi de chantier de gros œuvre pour un lieu de culte et une tranche de complexe résidentiel haut de gamme.</p>
+                                <span class="project-badge">Zerdkide Construction</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-item scroll-reveal" data-category="culture">
+                        <div class="project-img-wrapper">
+                            <img src="assets/project-heritage.png" alt="Château Pontus de Tyard" class="project-img">
+                            <div class="project-overlay">
+                                <span class="project-category">Conservation du Patrimoine</span>
+                                <h3 class="project-item-title">Château Pontus de Tyard (France)</h3>
+                                <p class="project-item-desc">Restauration historique de remparts médiévaux et conservation de structure ancienne.</p>
+                                <span class="project-badge">Association Rempart</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-item scroll-reveal" data-category="residential">
+                        <div class="project-img-wrapper">
+                            <img src="assets/project-sante.png" alt="Centres de Santé et Résidence Bancaire" class="project-img">
+                            <div class="project-overlay">
+                                <span class="project-category">Équipement Public / Tertiaire</span>
+                                <h3 class="project-item-title">Centres de Santé & Banque</h3>
+                                <p class="project-item-desc">Participation au réaménagement de structures médicales et conception d'une résidence bancaire.</p>
+                                <span class="project-badge">Agence Irizi Architecture</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-item scroll-reveal" data-category="urban">
+                        <div class="project-img-wrapper">
+                            <img src="assets/project-urbanisme.png" alt="Mise à niveau urbaine d'Agadir" class="project-img">
+                            <div class="project-overlay">
+                                <span class="project-category">Planification Urbaine</span>
+                                <h3 class="project-item-title">Mise à niveau des Quartiers</h3>
+                                <p class="project-item-desc">Division d'Urbanisme : Étude et participation au développement de quartiers sous-équipés.</p>
+                                <span class="project-badge">Commune Urbaine d'Agadir</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Timeline Section -->
+        <section class="experience-section" id="experience">
+            <div class="section-container">
+                <span class="section-subtitle">PARCOURS</span>
+                <h2 class="section-title">Expériences Professionnelles</h2>
+                
+                <div class="timeline">
+                    <!-- Item 1 -->
+                    <div class="timeline-item scroll-reveal">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">Juillet 2025</span>
+                            <span class="timeline-loc">Agadir</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Stage Professionnel</h3>
+                            <span class="timeline-org">Al Omrane Souss Massa</span>
+                            <p>Département de Conception et Développement. Division des Études et de la Programmation. Suivi minutieux des travaux de construction du Grand Théâtre d'Agadir.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="timeline-item scroll-reveal">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">Juillet 2024</span>
+                            <span class="timeline-loc">Agadir</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Stage en Administration Publique</h3>
+                            <span class="timeline-org">La Commune Urbaine d'Agadir</span>
+                            <p>Division d'Urbanisme et Département des Travaux et Études. Participation active à l'étude technique et sociale de la mise à niveau des quartiers sous-équipés.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="timeline-item scroll-reveal">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">Fév. - Mars 2024</span>
+                            <span class="timeline-loc">Agadir</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Stage en Agence d'Architecture</h3>
+                            <span class="timeline-org">Agence Irizi Architecture</span>
+                            <p>Participation aux plans d'aménagement d'un ensemble de centres de santé régionaux. Conception architecturale d'une résidence bancaire et suivi régulier de chantier.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="timeline-item scroll-reveal">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">Août 2023</span>
+                            <span class="timeline-loc">France</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Stage Restauration de Rempart</h3>
+                            <span class="timeline-org">Château Pontus de Tyard</span>
+                            <p>Apprentissage intensif et mise en pratique des techniques de restauration de maçonnerie historique et suivi strict des règles de conservation du patrimoine bâti.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="timeline-item scroll-reveal">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">Juil. - Août 2021</span>
+                            <span class="timeline-loc">Agadir</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Stage Chantier</h3>
+                            <span class="timeline-org">Sté. Zerdkide Construction</span>
+                            <p>Suivi de travaux de gros œuvre sur le chantier de la Grande Mosquée de Hay Essalam, et des travaux résidentiels de la 2e tranche d'Agadir Bay.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="section-container">
+                <div class="contact-grid">
+                    <div class="contact-info scroll-reveal">
+                        <span class="section-subtitle">ME CONTACTER</span>
+                        <h2 class="section-title">Travaillons ensemble sur vos futurs projets.</h2>
+                        <p class="contact-intro">N'hésitez pas à me joindre pour toute collaboration, opportunité de stage ou échange professionnel.</p>
+                        
+                        <div class="contact-details">
+                            <a href="mailto:salaheddineoussi@gmail.com" class="contact-detail-item">
+                                <span class="detail-icon"><i class="fa-regular fa-envelope"></i></span>
+                                <span class="detail-text">salaheddineoussi@gmail.com</span>
+                            </a>
+                            <a href="tel:+212697490191" class="contact-detail-item">
+                                <span class="detail-icon"><i class="fa-solid fa-phone"></i></span>
+                                <span class="detail-text">+212 6 97 49 01 91</span>
+                            </a>
+                            <div class="contact-detail-item">
+                                <span class="detail-icon"><i class="fa-solid fa-location-dot"></i></span>
+                                <span class="detail-text">Quartier Tilila, Agadir, Maroc</span>
+                            </div>
+                        </div>
+
+                        <!-- Technical Architectural Line Graphic -->
+                        <div class="architect-drawing-line">
+                            <span>ELEVATION A-A</span>
+                            <div class="drawing-line"></div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrapper scroll-reveal">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" required placeholder=" ">
+                                <label for="name">Nom Complet</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" required placeholder=" ">
+                                <label for="email">Adresse E-mail</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="subject" required placeholder=" ">
+                                <label for="subject">Sujet</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" required placeholder=" " rows="5"></textarea>
+                                <label for="message">Votre Message</label>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                <span class="btn-text">Envoyer le message</span>
+                                <span class="btn-icon"><i class="fa-solid fa-arrow-right-long"></i></span>
+                            </button>
+                            <div class="form-feedback" id="form-feedback"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Salah Eddine Oussi. Tous droits réservés.</p>
+            <p class="footer-credits">Conçu avec précision &bull; Architecture ENA Agadir</p>
+            <a href="#" class="back-to-top" aria-label="Retour en haut">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="app.js"></script>
+</body>
+</html>
